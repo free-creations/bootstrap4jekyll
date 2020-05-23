@@ -1,0 +1,33 @@
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.7
+  NewCops: enable
+
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+
+Layout/LineLength:
+  Max: 122
+
+Metrics/MethodLength:
+  Max: 16
+
+
+Metrics/ModuleLength:
+   Enabled: false
+
+Style/DocumentationMethod:
+  Description: 'Public methods.'
+  Enabled: true
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+
