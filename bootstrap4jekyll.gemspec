@@ -26,6 +26,7 @@ Gem::Specification.new do |gem_spec|
   gem_spec.require_paths = ['lib']
 
   gem_spec.add_development_dependency 'bundler'
+  gem_spec.add_development_dependency 'jekyll', '~> 4'
   gem_spec.add_development_dependency 'rake', '~> 12.0'
   gem_spec.add_development_dependency 'rspec', '~> 3.0'
   gem_spec.add_development_dependency 'rubocop', '~> 0.84.0'
