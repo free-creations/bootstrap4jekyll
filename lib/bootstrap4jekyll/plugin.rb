@@ -24,8 +24,5 @@ module Bootstrap4jekyll
       sass_config['load_paths'] << sass_load_paths
     end
 
-    def do_magic
-      warn 'Here we do magic'
-    end
   end
 end
