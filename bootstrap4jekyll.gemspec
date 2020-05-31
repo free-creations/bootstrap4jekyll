@@ -10,6 +10,14 @@ Gem::Specification.new do |gem_spec|
 
   gem_spec.summary       = 'Adds the Twitter Bootstrap framework to your Jekyll site.'
   gem_spec.homepage      = 'https://github.com/free-creations/bootstrap4jekyll'
+
+  gem_spec.metadata = {
+    'homepage_uri' => 'https://github.com/free-creations/bootstrap4jekyll',
+    'changelog_uri' => 'https://github.com/free-creations/bootstrap4jekyll.History.md',
+    'source_code_uri' => 'https://github.com/free-creations/bootstrap4jekyll',
+    'bug_tracker_uri' => 'https://github.com/free-creations/bootstrap4jekyll/issues'
+  }
+
   gem_spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
   gem_spec.metadata['homepage_uri'] = gem_spec.homepage
