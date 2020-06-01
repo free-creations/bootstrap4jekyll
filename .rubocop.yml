@@ -13,6 +13,7 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+    - 'bootstrap4jekyll.gemspec'
 
 Layout/LineLength:
   Max: 122

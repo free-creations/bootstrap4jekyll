@@ -9,10 +9,10 @@ module Bootstrap4jekyll
     # Add the paths of _bootstraps scss partials_ to the global _sass-load-path_.
     # @param [Jekyll::Site] site represents site-wide information and configuration settings.
     def complete_load_paths(site)
-      sass_load_paths = File.expand_path('stylesheets/', ::Bootstrap.assets_path)
+      # fetch the the path to the bootstrap partials.
+      bootstrap_partials = File.expand_path('stylesheets/', ::Bootstrap.assets_path)
 
       # make sure there is a 'sass' key-entry in the config settings.
-      #noinspection RubyStringKeysInHashInspection
       site.config['sass'] = { 'load_paths' => [] } unless site.config['sass']
       sass_config = site.config['sass']
 
@@ -20,9 +20,8 @@ module Bootstrap4jekyll
       sass_config['load_paths'] = [] unless sass_config['load_paths']
       # make sure that the 'load_paths' entry is an array and not just a string
       sass_config['load_paths'] = Array(sass_config['load_paths'])
-      # add bootstraps to load the paths
-      sass_config['load_paths'] << sass_load_paths
+      # add the bootstrap partials to the sass-load-paths
+      sass_config['load_paths'] << bootstrap_partials
     end
-
   end
 end
