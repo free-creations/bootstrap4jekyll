@@ -53,6 +53,8 @@ module SpecHelpers
     FileUtils.cp fixture_path(fixture), source_dir(fixture)
   end
 
+  # Calls  Jekyll::Site.new().
+  # This simulates the jekyll build for our test purpose.
   def new_jekyll_site(opts = {})
     defaults = Jekyll::Configuration::DEFAULTS
     opts = opts.merge(
