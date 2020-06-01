@@ -4,10 +4,6 @@ AllCops:
   TargetRubyVersion: 2.7
   NewCops: enable
 
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
 
 Metrics/BlockLength:
   Exclude:
