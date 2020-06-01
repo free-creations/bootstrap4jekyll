@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require 'spec_helpers'
 
 RSpec.describe Bootstrap4jekyll do
   it 'has a version number' do

@@ -3,7 +3,7 @@
 require 'bundler/setup'
 require 'bootstrap4jekyll'
 
-module Helpers
+module SpecHelpers
   def help
     :available
   end
@@ -20,5 +20,5 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 
-  config.include Helpers
+  config.include SpecHelpers
 end
