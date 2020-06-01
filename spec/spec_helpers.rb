@@ -58,7 +58,6 @@ module SpecHelpers
     opts = opts.merge(
         'source'      => source_dir,
         'destination' => dest_dir,
-    #'gems'        => ['jekyll-bootstrap-sass']
     )
     conf = Jekyll::Utils.deep_merge_hashes(defaults, opts)
     Jekyll::Site.new(conf)
