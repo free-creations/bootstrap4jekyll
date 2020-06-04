@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'bundler/setup'
-require 'bootstrap4jekyll'
 require 'fileutils'
 require 'jekyll'
 
@@ -12,7 +10,7 @@ TMP_DIR  = File.expand_path('../tmp', TEST_DIR)
 # A predefined directory that stores the fixture files.
 FIX_DIR  = File.expand_path('./fixtures', TEST_DIR)
 
-# Define helper methods for the RSpec test framework.
+# Defines helper methods for the RSpec test framework.
 # see: [RSpec documentation](https://relishapp.com/rspec/rspec-core/docs/helper-methods/define-helper-methods-in-a-module)
 module SpecHelpers
   # Returns a path in the temporary directory.
@@ -21,20 +19,22 @@ module SpecHelpers
   def tmp_dir(*sub_dirs)
     File.join(TMP_DIR, *sub_dirs)
   end
+
   # Returns a path in the source directory.
-  # @param [String] file_name optionally, the name of the file.
+  # @param [String] file_name optionally, the name of a file.
   # @return [String] a path in the source directory.
   def source_dir(*file_name)
     tmp_dir('source', *file_name)
   end
+
   # Returns a path in the destination directory.
-  # @param [String] file_name optionally, the name of the file.
+  # @param [String] file_name optionally, the name of a file.
   # @return [String] a path in the destination directory.
   def dest_dir(*file_name)
     tmp_dir('dest', *file_name)
   end
 
-  # Create source and destination directories.
+  # Create a source directory and purge any destination directory remnant from previous test.
   def init_source_and_dest
     FileUtils.mkdir_p source_dir
     FileUtils.rm_rf dest_dir
@@ -47,7 +47,7 @@ module SpecHelpers
     File.expand_path fixture_file_name, FIX_DIR
   end
 
-  # Add a fixture file to the source directory
+  # Add the given fixture file to the source directory
   # @param [String] fixture the name of the file.
   def add_fixture_to_source(fixture)
     FileUtils.cp fixture_path(fixture), source_dir(fixture)
@@ -55,13 +55,17 @@ module SpecHelpers
 
   # Calls  Jekyll::Site.new().
   # This simulates the jekyll build for our test purpose.
-  def new_jekyll_site(opts = {})
+  # @param [Hash{null->null}] config A Hash containing site configuration details that
+  #                                  we'll find in the `_config.yml` file.
+  # @return [Jekyll::Site]
+  def new_jekyll_site(config = {})
     defaults = Jekyll::Configuration::DEFAULTS
-    opts = opts.merge(
-        'source'      => source_dir,
-        'destination' => dest_dir,
+    config = config.merge(
+      'source' => source_dir,
+      'destination' => dest_dir,
+      'plugins' => ['bootstrap4jekyll']
     )
-    conf = Jekyll::Utils.deep_merge_hashes(defaults, opts)
+    conf = Jekyll::Utils.deep_merge_hashes(defaults, config)
     Jekyll::Site.new(conf)
   end
 end
