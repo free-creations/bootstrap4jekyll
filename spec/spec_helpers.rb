@@ -68,6 +68,11 @@ module SpecHelpers
     conf = Jekyll::Utils.deep_merge_hashes(defaults, config)
     Jekyll::Site.new(conf)
   end
+
+  def assets_rendered?
+    js = dest_dir('assets/javascripts/bootstrap.js')
+    File.exist?(js)
+  end
 end
 
 RSpec.configure do |config|
