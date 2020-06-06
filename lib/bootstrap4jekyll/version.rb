@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 module Bootstrap4jekyll
-  # The version of this plugin. For official releases this is identical to the version of the
-  # [bootstrap framework](https://getbootstrap.com/).
-  VERSION = '0.0.0'
+  # The version of this plugin.
+  VERSION = '1.0.0'
+
+  # The version of the requested [bootstrap GEM](https://rubygems.org/gems/bootstrap)
+  BOOTSTRAP_VERSION = '4.5.0'
 end

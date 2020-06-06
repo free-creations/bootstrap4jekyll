@@ -3,19 +3,20 @@
 require_relative 'lib/bootstrap4jekyll/version'
 
 Gem::Specification.new do |gem_spec|
-  gem_spec.name          = 'bootstrap4jekyll'
-  gem_spec.version       = Bootstrap4jekyll::VERSION
-  gem_spec.authors       = ['Harald Postner']
-  gem_spec.email         = ['Harald-lb@free-creations.de']
+  gem_spec.name = 'bootstrap4jekyll'
+  gem_spec.version = Bootstrap4jekyll::VERSION
+  gem_spec.authors = ['Harald Postner']
+  gem_spec.email = ['Harald-lb@free-creations.de']
 
-  gem_spec.summary       = 'Adds the Twitter Bootstrap framework to your Jekyll site.'
-  gem_spec.homepage      = 'https://github.com/free-creations/bootstrap4jekyll'
+  gem_spec.summary = 'A Jekyll plugin that adds the Twitter Bootstrap framework to your site.'
+  # gem_spec.description = %Q[This plugin requests Bootstrap #{Bootstrap4jekyll::BOOTSTRAP_VERSION}]
+  gem_spec.homepage = 'https://github.com/free-creations/bootstrap4jekyll'
 
   gem_spec.metadata = {
-    'homepage_uri' => 'https://github.com/free-creations/bootstrap4jekyll',
-    'changelog_uri' => 'https://github.com/free-creations/bootstrap4jekyll.History.md',
-    'source_code_uri' => 'https://github.com/free-creations/bootstrap4jekyll',
-    'bug_tracker_uri' => 'https://github.com/free-creations/bootstrap4jekyll/issues'
+      'homepage_uri' => 'https://github.com/free-creations/bootstrap4jekyll',
+      'changelog_uri' => 'https://github.com/free-creations/bootstrap4jekyll.History.md',
+      'source_code_uri' => 'https://github.com/free-creations/bootstrap4jekyll',
+      'bug_tracker_uri' => 'https://github.com/free-creations/bootstrap4jekyll/issues'
   }
 
   gem_spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
@@ -29,11 +30,11 @@ Gem::Specification.new do |gem_spec|
   gem_spec.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
-  gem_spec.bindir        = 'exe'
-  gem_spec.executables   = gem_spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  gem_spec.bindir = 'exe'
+  gem_spec.executables = gem_spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   gem_spec.require_paths = ['lib']
 
-  gem_spec.add_dependency 'bootstrap', '~> 4.5'
+  gem_spec.add_dependency 'bootstrap'
   gem_spec.add_dependency 'jekyll', '~> 4'
 
   gem_spec.add_development_dependency 'bundler'

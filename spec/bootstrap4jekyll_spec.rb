@@ -22,7 +22,7 @@ RSpec.describe Bootstrap4jekyll do
     expect(output).to match(regex)
   end
 
-  context 'rendering assets' do
+  context 'when rendering assets' do
     context 'with no config' do
       it "doesn't render assets" do
         expect(assets_rendered?).not_to eql(true)
@@ -37,13 +37,13 @@ RSpec.describe Bootstrap4jekyll do
           expect(assets_rendered?).to be(true)
         end
       end
-    end
 
-    context 'with assets disabled' do
-      let(:jekyll_config) { { 'bootstrap' => { 'assets' => false } } }
+      context 'with assets disabled' do
+        let(:jekyll_config) { { 'bootstrap' => { 'assets' => false } } }
 
-      it "doesn't render assets" do
-        expect(assets_rendered?).to_not eql(true)
+        it "doesn't render assets" do
+          expect(assets_rendered?).not_to eql(true)
+        end
       end
     end
   end

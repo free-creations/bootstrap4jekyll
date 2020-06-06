@@ -23,6 +23,6 @@ module Bootstrap4jekyll
   # but before writing any files.
   #
   Jekyll::Hooks.register :site, :post_render do |site|
-    bootstrap_plugin.add_extra_assets(site)
+    bootstrap_plugin.add_bootstrap_assets(site)
   end
 end
