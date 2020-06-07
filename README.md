@@ -5,15 +5,16 @@ framework to your _Jekyll_ site.
 
 Although the
 [Twitter Bootstrap](https://getbootstrap.com/)
-framework exists as a GEM, called [bootstrap rubygem](https://rubygems.org/gems/bootstrap),
-it cannot be used directly in a _Jekyll_ site, because it is specifically made for _rails_.
+framework exists as a GEM, called [Bootstrap Ruby Gem][BRG],
+it cannot be used directly in a _Jekyll_ site, because it is specifically made for the
+_Rails_ asset pipeline.
 
-_bootstrap4jekyll_ acts as an intermediate between the original
-[bootstrap rubygem](https://rubygems.org/gems/bootstrap)
-and _Jekyll_. Thus making [bootstrap rubygem](https://rubygems.org/gems/bootstrap) 
-available to _Jekyll_ programmers.
+_bootstrap4jekyll_ integrates the 
+[Bootstrap Ruby Gem][BRG]
+into _Jekyll_. Thus making the [Bootstrap Ruby Gem][BRG]
+available to _Jekyll_ users.
 
-This gem is inspired by the 
+This GEM is inspired by the 
 [jekyll-bootstrap-sass](https://github.com/benbalter/jekyll-bootstrap-sass) GEM,
 which has not been maintained for a while.
 
@@ -86,12 +87,19 @@ which you can include in your site's header as you would any other javascript fi
 
 ## Specifying the Bootstrap version
 
-`bootstrap4jekyll` relies on official [bootstrap rubygem](https://rubygems.org/gems/bootstrap).
-By default, the newest version will be used.
+`bootstrap4jekyll` relies on official [Bootstrap Ruby Gem][BRG].
+By default, the newest version starting from 4.5 will be used.
 
-To use a specific version of Bootstrap, simply specify the desired version in your `Gemfile`.
+To use a specific version of the [Bootstrap Ruby Gem][BRG], simply specify the desired version in your `Gemfile`.
 Like this:
 
 ```ruby
   gem 'bootstrap', '~> 4.5'
 ```
+
+To see how the version of the [Bootstrap Ruby Gem][BRG] relates to the version of the included
+_framework_, look into the [GEM's changelog][BRGchangeLog]
+
+
+[BRG]: https://rubygems.org/gems/bootstrap
+[BRGchangeLog]: https://github.com/twbs/bootstrap-rubygem/blob/master/CHANGELOG.md

@@ -34,7 +34,7 @@ Gem::Specification.new do |gem_spec|
   gem_spec.executables = gem_spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   gem_spec.require_paths = ['lib']
 
-  gem_spec.add_dependency 'bootstrap'
+  gem_spec.add_dependency 'bootstrap','~> 4.2'
   gem_spec.add_dependency 'jekyll', '~> 4'
 
   gem_spec.add_development_dependency 'bundler'

@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    bootstrap4jekyll (1.0.0)
-      bootstrap
+    bootstrap4jekyll (1.0.0.pre)
+      bootstrap (~> 4.2)
       jekyll (~> 4)
 
 GEM
