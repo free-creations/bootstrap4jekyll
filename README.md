@@ -88,7 +88,7 @@ which you can include in your site's header as you would any other javascript fi
 ## Specifying the Bootstrap version
 
 `bootstrap4jekyll` relies on official [Bootstrap Ruby Gem][BRG].
-By default, the newest version starting from 4.5 will be used.
+By default, the newest version starting from 4.2 will be used.
 
 To use a specific version of the [Bootstrap Ruby Gem][BRG], simply specify the desired version in your `Gemfile`.
 Like this:
