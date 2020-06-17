@@ -4,8 +4,8 @@ Adds the
 framework to your _Jekyll_ site.
 
 Although the
-[Twitter Bootstrap](https://getbootstrap.com/)
-framework exists as a GEM, called [Bootstrap Ruby Gem][BRG],
+[Twitter Bootstrap][TBstrp] - framework 
+exists as a GEM, called [Bootstrap Ruby Gem][BRG],
 it cannot be used directly in a _Jekyll_ site, because it is specifically made for the
 _Rails_ asset pipeline.
 
@@ -24,7 +24,7 @@ Add the following to your site's `Gemfile`:
 
 ```ruby
 group :jekyll_plugins do
-  gem "bootstrap4jekyll"
+  gem "bootstrap4jekyll", "~> 1.0"
 end
 ```
 Now run Bundler:
@@ -32,8 +32,9 @@ Now run Bundler:
 ```console
 $ bundle install
 ```
-This will add the `bootstrap4jekyll` plugin to your site. Together with the plugin also the _Twitter-
-Bootstrap framework_ will added to your site.
+This will add the `bootstrap4jekyll` plugin to your site. Together with the plugin also the
+[Twitter Bootstrap][TBstrp] - framework 
+will added to your site.
 
 ## Installation in a Jekyll theme
 
@@ -51,11 +52,14 @@ plugins:
 ```
 
 When you use this theme in a Jekyll site the `bootstrap4jekyll` plugin 
-and the _bootstrap framework_ will be automatically loaded 
+and the [Twitter Bootstrap][TBstrp] - framework
+will be automatically loaded 
 together with your theme.
 
 ## Usage
-
+To customize the [Twitter Bootstrap][TBstrp] - framework,
+you can proceed as explained in the [Jekyll Docs](https://jekyllrb.com/docs/assets/)
+about _Sass_ assets.
 Create a `.scss` file (e.g., `assets/myStyle.scss`), with the following:
 
 ```scss
@@ -66,7 +70,8 @@ Create a `.scss` file (e.g., `assets/myStyle.scss`), with the following:
 
 // (Your custom SCSS Here)
 ```
-When your site is built, Jekyll will automatically add the _Bootstrap framework_ before it renders 
+When your site is built, Jekyll will automatically add the [Twitter Bootstrap][TBstrp] - framework 
+before it renders 
 your site's css. In the above example, the resulting file would be `assets/myStyle.css` 
 with Bootstrap's CSS followed by your own.
 
@@ -103,3 +108,4 @@ _framework_, look into the [GEM's changelog][BRGchangeLog]
 
 [BRG]: https://rubygems.org/gems/bootstrap
 [BRGchangeLog]: https://github.com/twbs/bootstrap-rubygem/blob/master/CHANGELOG.md
+[TBstrp]: https://getbootstrap.com/
