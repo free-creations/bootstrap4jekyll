@@ -19,7 +19,7 @@ Gem::Specification.new do |gem_spec|
     'bug_tracker_uri' => 'https://github.com/free-creations/bootstrap4jekyll/issues'
   }
 
-  gem_spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
+  gem_spec.required_ruby_version = Gem::Requirement.new('>= 3.0')
 
   gem_spec.metadata['homepage_uri'] = gem_spec.homepage
   gem_spec.metadata['source_code_uri'] = gem_spec.homepage
@@ -34,14 +34,15 @@ Gem::Specification.new do |gem_spec|
   gem_spec.executables = gem_spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   gem_spec.require_paths = ['lib']
 
-  gem_spec.add_dependency 'bootstrap', '>= 4.2'
-  gem_spec.add_dependency 'jekyll', '>= 4.0'
+  gem_spec.add_dependency 'bootstrap', '>= 5.0'
+  gem_spec.add_dependency 'jekyll', '>= 4.2'
 
   gem_spec.add_development_dependency 'bundler'
-  gem_spec.add_development_dependency 'rake', '~> 12.0'
-  gem_spec.add_development_dependency 'rspec', '~> 3.9'
-  gem_spec.add_development_dependency 'rubocop', '~> 0.85'
-  gem_spec.add_development_dependency 'rubocop-rspec', '~> 1.39.0'
-  gem_spec.add_development_dependency 'simplecov', '~> 0.18.5'
+  gem_spec.add_development_dependency 'rake', '~> 13.0'
+  gem_spec.add_development_dependency 'rspec', '~> 3.10'
+  gem_spec.add_development_dependency 'rubocop', '~> 1.18.3'
+  gem_spec.add_development_dependency 'rubocop-rake', '~> 0.6.0'
+  gem_spec.add_development_dependency 'rubocop-rspec', '~> 2.4'
+  gem_spec.add_development_dependency 'simplecov', '~> 0.21'
   gem_spec.add_development_dependency 'yard'
 end

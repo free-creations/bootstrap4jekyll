@@ -1,3 +1,5 @@
+## 2.0.0 / 2021-07-14
+* Bumped all gems to their newest version. Especially Bootstrap is now 5.0
 ## 1.0.1 / 2020-06-17
   * First official version
 ## 1.0.1.pre / 2020-06-08

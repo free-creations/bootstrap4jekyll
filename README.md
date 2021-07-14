@@ -24,7 +24,7 @@ Add the following to your site's `Gemfile`:
 
 ```ruby
 group :jekyll_plugins do
-  gem "bootstrap4jekyll", "~> 1.0"
+  gem "bootstrap4jekyll", "~> 2.0"
 end
 ```
 Now run Bundler:
@@ -42,7 +42,7 @@ When you plan to build a Jekyll theme, instead of declaring the plugin in the `G
 should declare it in your `*.gemspec` file. Like this:
 
 ```ruby
-  spec.add_runtime_dependency "bootstrap4jekyll", "~> 1.0"
+  spec.add_runtime_dependency "bootstrap4jekyll", "~> 2.0"
 ```
 
 And additionally in your `_config.yml` file, like this:
@@ -93,7 +93,7 @@ which you can include in your site's header as you would any other javascript fi
 ## Specifying the Bootstrap version
 
 `bootstrap4jekyll` relies on official [Bootstrap Ruby Gem][BRG].
-By default, the newest version starting from 4.2 will be used.
+By default, the newest version starting from 5.0 will be used.
 
 To use a specific version of the [Bootstrap Ruby Gem][BRG], simply specify the desired version in your `Gemfile`.
 Like this:
