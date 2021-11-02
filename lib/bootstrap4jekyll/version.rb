@@ -2,5 +2,5 @@
 
 module Bootstrap4jekyll
   # The version of this plugin.
-  VERSION = '2.0.0'
+  VERSION = '2.0.1'
 end
