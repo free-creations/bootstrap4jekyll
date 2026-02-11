@@ -8,8 +8,8 @@ Gem::Specification.new do |gem_spec|
   gem_spec.authors = ['Harald Postner']
   gem_spec.email = ['Harald-lb@free-creations.de']
 
-  gem_spec.summary = 'A Jekyll plugin that adds the Twitter Bootstrap framework to your site.'
-  gem_spec.description = 'This is a partial re-write of the `jekyll-bootstrap-sass` plugin.'
+  gem_spec.summary = 'A Jekyll plugin that adds the Twitter Bootstrap 5 framework to your site.'
+  gem_spec.description = 'A maintained and modern replacement for jekyll-bootstrap-sass, supporting Bootstrap 5 and Jekyll 4.'
   gem_spec.homepage = 'https://github.com/free-creations/bootstrap4jekyll'
 
   gem_spec.metadata = {

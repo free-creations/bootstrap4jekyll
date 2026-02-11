@@ -1,8 +1,15 @@
 # bootstrap4jekyll
 
-Adds the 
-[Twitter Bootstrap](https://getbootstrap.com/)
-framework to your _Jekyll_ site.
+[![Gem Version](https://badge.fury.io/rb/bootstrap4jekyll.svg)](https://badge.fury.io/rb/bootstrap4jekyll)
+[![Ruby](https://github.com/free-creations/bootstrap4jekyll/actions/workflows/ruby.yml/badge.svg)](https://github.com/free-creations/bootstrap4jekyll/actions/workflows/ruby.yml)
+
+**The modern bridge between Jekyll and Bootstrap 5.**
+
+Adds the [Twitter Bootstrap](https://getbootstrap.com/) framework to your _Jekyll_ site.
+
+> **Note on Versioning:** Despite the name, `bootstrap4jekyll` fully supports **Bootstrap 5.x** and is a maintained 
+> alternative to the now-archived `jekyll-bootstrap-sass`.
+
 
 Although the 
 [Twitter Bootstrap][TBstrp] framework 
@@ -36,7 +43,7 @@ This will add the `bootstrap4jekyll` plugin to your site, along with the [Twitte
 If you are building a Jekyll theme, declare the plugin in your `*.gemspec` file instead of the `Gemfile`:
 
 ```ruby
-spec.add_runtime_dependency "bootstrap4jekyll", "~> 4.0"
+spec.add_runtime_dependency "bootstrap4jekyll", "~> 3.0"
 ```
 Additionally, add it to your `_config.yml` file:
 
