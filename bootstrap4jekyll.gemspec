@@ -7,6 +7,7 @@ Gem::Specification.new do |gem_spec|
   gem_spec.version = Bootstrap4jekyll::VERSION
   gem_spec.authors = ['Harald Postner']
   gem_spec.email = ['Harald-lb@free-creations.de']
+  gem_spec.license = 'MIT'
 
   gem_spec.summary = 'A Jekyll plugin that adds the Twitter Bootstrap 5 framework to your site.'
   gem_spec.description = 'A maintained and modern replacement for jekyll-bootstrap-sass, supporting Bootstrap 5 and Jekyll 4.'
