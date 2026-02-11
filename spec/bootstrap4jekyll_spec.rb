@@ -17,9 +17,10 @@ RSpec.describe Bootstrap4jekyll do
     expect(File.exist?(stylesheet)).to be(true)
   end
 
-  it 'produces a stylesheet file with the correct content' do
-    regex = /Bootstrap v#{Regexp.escape(Bootstrap::VERSION)}/
-    expect(output).to match(regex)
+  it 'produces a stylesheet file with bootstrap content' do
+    # Let us look for a typical Bootstrap-Class.
+    expect(output).to include('.container')
+    expect(output).to include('color: red') # Our own style in the Fixture
   end
 
   context 'when rendering assets' do

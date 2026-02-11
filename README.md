@@ -1,66 +1,56 @@
 # bootstrap4jekyll
+
 Adds the 
 [Twitter Bootstrap](https://getbootstrap.com/)
 framework to your _Jekyll_ site.
 
-Although the
-[Twitter Bootstrap][TBstrp] - framework 
-exists as a GEM, called [Bootstrap Ruby Gem][BRG],
-it cannot be used directly in a _Jekyll_ site, because it is specifically made for the
-_Rails_ asset pipeline.
+Although the 
+[Twitter Bootstrap][TBstrp] framework 
+is available as a Ruby gem ([Bootstrap Ruby Gem][BRG]), 
+it cannot be used directly in a Jekyll site because it is specifically designed for the Rails asset pipeline.
 
 _bootstrap4jekyll_ integrates the 
-[Bootstrap Ruby Gem][BRG]
-into _Jekyll_. Thus making the [Bootstrap Ruby Gem][BRG]
-available to _Jekyll_ users.
+[Bootstrap Ruby Gem][BRG] 
+into Jekyll, making the framework available to Jekyll users. 
+This gem is inspired by the `jekyll-bootstrap-sass` gem, which is no longer maintained.
 
-This GEM is inspired by the 
-[jekyll-bootstrap-sass](https://github.com/benbalter/jekyll-bootstrap-sass) GEM,
-which has not been maintained for a while.
-
-## Installation in a normal Jekyll site
+## Installation for a Standard Jekyll Site
 
 Add the following to your site's `Gemfile`:
 
 ```ruby
 group :jekyll_plugins do
-  gem "bootstrap4jekyll", "~> 2.0"
+  gem "bootstrap4jekyll", "~> 3.0"
 end
 ```
-Now run Bundler:
+Then run Bundler:
 
-```console
+```
 $ bundle install
 ```
-This will add the `bootstrap4jekyll` plugin to your site. Together with the plugin also the
-[Twitter Bootstrap][TBstrp] - framework 
-will added to your site.
 
-## Installation in a Jekyll theme
+This will add the `bootstrap4jekyll` plugin to your site, along with the [Twitter Bootstrap][TBstrp] framework.
 
-When you plan to build a Jekyll theme, instead of declaring the plugin in the `Gemfile` you 
-should declare it in your `*.gemspec` file. Like this:
+## Installation for a Jekyll Theme
+
+If you are building a Jekyll theme, declare the plugin in your `*.gemspec` file instead of the `Gemfile`:
 
 ```ruby
-  spec.add_runtime_dependency "bootstrap4jekyll", "~> 2.0"
+spec.add_runtime_dependency "bootstrap4jekyll", "~> 4.0"
 ```
+Additionally, add it to your `_config.yml` file:
 
-And additionally in your `_config.yml` file, like this:
 ```yaml
 plugins:
   - bootstrap4jekyll
 ```
 
-When you use this theme in a Jekyll site the `bootstrap4jekyll` plugin 
-and the [Twitter Bootstrap][TBstrp] - framework
-will be automatically loaded 
-together with your theme.
+When this theme is used in a Jekyll site, the plugin and the Bootstrap framework will be loaded automatically.
 
 ## Usage
-To customize the [Twitter Bootstrap][TBstrp] - framework,
-you can proceed as explained in the [Jekyll Docs](https://jekyllrb.com/docs/assets/)
-about _Sass_ assets.
-Create a `.scss` file (e.g., `assets/myStyle.scss`), with the following:
+
+To customise the Bootstrap framework, follow the standard [Jekyll Assets documentation](https://jekyllrb.com/docs/assets/). 
+Create a `.scss` file (e.g., `assets/style.scss`) with the following content:
 
 ```scss
 ---
@@ -68,44 +58,59 @@ Create a `.scss` file (e.g., `assets/myStyle.scss`), with the following:
 
 @import 'bootstrap';
 
-// (Your custom SCSS Here)
+// Your custom SCSS goes here
 ```
-When your site is built, Jekyll will automatically add the [Twitter Bootstrap][TBstrp] - framework 
-before it renders 
-your site's css. In the above example, the resulting file would be `assets/myStyle.css` 
-with Bootstrap's CSS followed by your own.
 
-## Assets
+When your site is built, Jekyll will automatically include the Bootstrap framework before rendering your site's CSS. 
+In the example above, the resulting file would be `assets/style.css`.
 
-By default, `bootstrap4jekyll` will simply make the `@import 'bootstrap';` directive available 
-to your custom stylesheets so that you can more easily include Bootstrap's CSS.
+## JavaScript Assets
 
-If you would like to use Bootstrap's javascripts, you'll need to add the 
-following to your site's `_config.yml`:
+By default, `bootstrap4jekyll` makes the `@import 'bootstrap';` directive available to your stylesheets.
+
+If you wish to use Bootstrap's JavaScript components, add the following to your site's `_config.yml`:
 
 ```yaml
 bootstrap:
   assets: true
 ```
-This will create `assets/javascripts/bootstrap` folders in the generated site, 
-which you can include in your site's header as you would any other javascript file.
 
-## Specifying the Bootstrap version
+This will copy the Bootstrap JavaScript files into the `assets/javascripts/bootstrap` folder of the generated site. 
+You can then include them in your layout as you would any other JavaScript file. 
+Note that Bootstrap 5.x no longer requires jQuery but may require Popper.js for certain components 
+(which is included in the bundle).
 
-`bootstrap4jekyll` relies on official [Bootstrap Ruby Gem][BRG].
-By default, the newest version starting from 5.0 will be used.
+## Silencing Sass Deprecation Warnings
 
-To use a specific version of the [Bootstrap Ruby Gem][BRG], simply specify the desired version in your `Gemfile`.
-Like this:
+Jekyll uses the [jekyll-sass-converter](https://jekyllrb.com/docs/configuration/sass/) to process stylesheets. 
+When using Bootstrap 5.x, you may encounter several deprecation warnings in your console. 
 
-```ruby
-  gem 'bootstrap', '~> 4.5'
+To silence these, configure the Sass compiler in your `_config.yml`:
+
+```yaml
+sass:
+  silence_deprecations:
+    - global-builtin
+    - import
+    - color-functions
+    - if-function
 ```
 
-To see how the version of the [Bootstrap Ruby Gem][BRG] relates to the version of the included
-_framework_, look into the [GEM's changelog][BRGchangeLog]
 
+## Specifying the Bootstrap Version
+
+`bootstrap4jekyll` relies on the official [Bootstrap Ruby Gem][BRG]. By default, the latest version (5.x) will be used.
+
+To use a specific version of Bootstrap, simply specify it in your `Gemfile`:
+
+```ruby
+gem 'bootstrap', '~> 5.3'
+```
+
+
+To see how the version of the Bootstrap gem relates to the framework version, please consult the [GEM's changelog][BRGchangeLog].
 
 [BRG]: https://rubygems.org/gems/bootstrap
 [BRGchangeLog]: https://github.com/twbs/bootstrap-rubygem/blob/master/CHANGELOG.md
 [TBstrp]: https://getbootstrap.com/
+

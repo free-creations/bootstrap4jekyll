@@ -6,9 +6,9 @@ require 'jekyll'
 # The directory where the tests shall happen.
 TEST_DIR = File.dirname(__FILE__)
 # A temporary directory to store the test results.
-TMP_DIR  = File.expand_path('../tmp', TEST_DIR)
+TMP_DIR = File.expand_path('../tmp', TEST_DIR)
 # A predefined directory that stores the fixture files.
-FIX_DIR  = File.expand_path('./fixtures', TEST_DIR)
+FIX_DIR = File.expand_path('./fixtures', TEST_DIR)
 
 # Defines helper methods for the RSpec test framework.
 # see: [RSpec documentation](https://relishapp.com/rspec/rspec-core/docs/helper-methods/define-helper-methods-in-a-module)
@@ -63,7 +63,10 @@ module SpecHelpers
     config = config.merge(
       'source' => source_dir,
       'destination' => dest_dir,
-      'plugins' => ['bootstrap4jekyll']
+      'plugins' => ['bootstrap4jekyll'],
+      'sass' => {
+        'silence_deprecations' => %w[global-builtin import color-functions if-function]
+      }
     )
     conf = Jekyll::Utils.deep_merge_hashes(defaults, config)
     Jekyll::Site.new(conf)

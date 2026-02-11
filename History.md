@@ -1,3 +1,8 @@
+## 3.0.0 / 2026-02-12
+*   Updated minimum Ruby requirement to 3.1.
+*   Upgraded jekyll-sass-converter dependency to version 3.0 or higher.
+*   Added support for silencing Sass deprecation warnings via Jekyll configuration.
+*   Updated development dependencies and modernised the internal toolchain.
 ## 2.0.1 / 2021-11-02
 * Bumped Bootstrap to version 5.1
 ## 2.0.0 / 2021-07-14

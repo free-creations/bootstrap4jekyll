@@ -19,7 +19,7 @@ Gem::Specification.new do |gem_spec|
     'bug_tracker_uri' => 'https://github.com/free-creations/bootstrap4jekyll/issues'
   }
 
-  gem_spec.required_ruby_version = Gem::Requirement.new('>= 3.0')
+  gem_spec.required_ruby_version = Gem::Requirement.new('>= 3.1')
 
   gem_spec.metadata['homepage_uri'] = gem_spec.homepage
   gem_spec.metadata['source_code_uri'] = gem_spec.homepage
@@ -36,6 +36,7 @@ Gem::Specification.new do |gem_spec|
 
   gem_spec.add_dependency 'bootstrap', '>= 5.1'
   gem_spec.add_dependency 'jekyll', '>= 4.2'
+  gem_spec.add_dependency 'jekyll-sass-converter', '>= 3.0' # Required for 'silence_deprecations' support.
 
   gem_spec.add_development_dependency 'bundler'
   gem_spec.add_development_dependency 'rake', '~> 13.0'
